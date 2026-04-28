@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResQ — Emergency Response for International Tourists</title>
+  <meta name="description" content="ResQ is a zero-friction, multilingual emergency response platform for international tourists in hospitality venues. One tap. Any language. Help in seconds." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="index.css" />
+  <!-- Leaflet for maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══════════════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo" id="logo-home" aria-label="ResQ Home">
+      <div class="nav-logo-icon">🛡️</div>
+      <span>ResQ</span>
+    </a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#" class="nav-link active" data-page="home"      id="nav-home">Home</a>
+      <a href="#" class="nav-link"         data-page="emergency" id="nav-emergency">🆘 Emergency</a>
+      <a href="#" class="nav-link"         data-page="map"       id="nav-map">🗺️ Resource Map</a>
+      <a href="#" class="nav-link"         data-page="hotlines"  id="nav-hotlines">📞 Hotlines</a>
+      <a href="#" class="nav-link"         data-page="alerts"    id="nav-alerts">⚠️ Public Alerts</a>
+      <a href="#" class="nav-link"         data-page="dashboard" id="nav-dashboard">📊 Hotel Dashboard</a>
+    </div>
+
+    <div class="nav-actions">
+      <div class="flex-center gap-1" style="font-size:0.75rem;color:var(--text-muted);">
+        <span class="status-dot live"></span> Live
+      </div>
+      <button class="btn btn-danger btn-sm nav-sos" id="sos-btn" aria-label="Emergency SOS">🆘 SOS</button>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ PAGES ════════════════════════════════════════════════════════ -->
+<main style="padding-top: var(--nav-h);">
+
+  <!-- PAGE: HOME -->
+  <div class="page active" id="page-home"></div>
+
+  <!-- PAGE: EMERGENCY -->
+  <div class="page" id="page-emergency"></div>
+
+  <!-- PAGE: MAP -->
+  <div class="page" id="page-map"></div>
+
+  <!-- PAGE: HOTLINES -->
+  <div class="page" id="page-hotlines"></div>
+
+  <!-- PAGE: ALERTS -->
+  <div class="page" id="page-alerts"></div>
+
+  <!-- PAGE: DASHBOARD -->
+  <div class="page" id="page-dashboard"></div>
+
+</main>
+
+<!-- ═══ TOAST CONTAINER ══════════════════════════════════════════════ -->
+<div id="toast-container" role="alert" aria-live="polite"></div>
+
+<!-- ═══ SCRIPTS ══════════════════════════════════════════════════════ -->
+<script src="nav.js" defer></script>
+<script src="pages/home.js" defer></script>
+<script src="pages/emergency.js" defer></script>
+<script src="pages/map.js" defer></script>
+<script src="pages/hotlines.js" defer></script>
+<script src="pages/alerts.js" defer></script>
+<script src="pages/dashboard.js" defer></script>
+<script src="app.js" defer></script>
+
+</body>
+</html>
